@@ -1,4 +1,6 @@
-package hello.springcorebasic;
+package hello.springcorebasic.member;
+
+import hello.springcorebasic.member.Member;
 
 public interface MemberRepository {
 

@@ -1,4 +1,4 @@
-package hello.springcorebasic;
+package hello.springcorebasic.member;
 
 public enum Grade {
     BASIC, VIP

@@ -1,10 +1,13 @@
-package hello.springcorebasic;
+package hello.springcorebasic.member;
+
+import hello.springcorebasic.member.Member;
+import hello.springcorebasic.member.MemberRepository;
 
 import java.util.HashMap;
 import java.util.Map;
 
 // 구현체
-public class MemoryMemberRepository implements MemberRepository{
+public class MemoryMemberRepository implements MemberRepository {
 
     private static Map<Long, Member> store = new HashMap<>();
 
