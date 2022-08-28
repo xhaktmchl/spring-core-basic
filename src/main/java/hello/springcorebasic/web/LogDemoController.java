@@ -15,13 +15,15 @@ import javax.servlet.http.HttpServletRequest;
 public class LogDemoController {
 
     private final LogDemoService logDemoService;
-    private final ObjectProvider<MyLogger> myLoggerProvider; // 빈 생명주기 직접 조절하기 위해
+//    private final ObjectProvider<MyLogger> myLoggerProvider; // 빈 생명주기 직접 조절하기 위해
+    private final MyLogger myLogger; // 빈 생명주기 직접 조절하기 위해
+
 
     @RequestMapping("log-demo")
     @ResponseBody
     public String logDemo(HttpServletRequest request){
         String requestURL = request.getRequestURL().toString();
-        MyLogger myLogger = myLoggerProvider.getObject();
+//        MyLogger myLogger = myLoggerProvider.getObject();
 
         myLogger.setRequestURL(requestURL);
         myLogger.log("controller test");
