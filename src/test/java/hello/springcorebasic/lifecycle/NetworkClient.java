@@ -3,6 +3,9 @@ package hello.springcorebasic.lifecycle;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class NetworkClient{
 
     private String url;
@@ -33,12 +36,14 @@ public class NetworkClient{
     }
 
     // 의존주입 후 초기화 메서즈
+    @PostConstruct
     public void init(){
         connect();
         call("초기화 연결 메시지");
     }
 
     //스프링 종료 전 빈 소멸 지원 메서드
+    @PreDestroy
     public void close(){
         disconnect();
     }
